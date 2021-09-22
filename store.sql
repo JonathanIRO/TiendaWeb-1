@@ -22,7 +22,6 @@
 --
 -- Estructura de tabla para la tabla articulo
 --
-
 CREATE SCHEMA IF NOT EXISTS store;
 USE store;
 
