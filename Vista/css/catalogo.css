@@ -1,0 +1,24 @@
+.tableT {
+    margin: 0;
+    border-collapse: collapse;
+    border: 1px solid black;
+    background: #2CA0DF;
+    top: 50%;
+    left: 50%;
+    /**position: absolute;*/
+    transform: translate (-50%, -50%);
+}
+
+.tableT td {
+    padding: 10px 40px;
+    border: 1px solid black;
+    text-align: center;
+    background: #f3f3f3;
+    font-weight: bold;
+}
+
+.tableT th {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: #70C1F7;
+}
