@@ -22,7 +22,6 @@
 --
 -- Estructura de tabla para la tabla articulo
 --
-GRANT ALL PRIVILEGES ON *.* TO `root`@`::1` WITH GRANT OPTION;
 
 CREATE SCHEMA IF NOT EXISTS store;
 USE store;
