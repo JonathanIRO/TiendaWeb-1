@@ -215,7 +215,6 @@ INSERT INTO usuario VALUES
 (NULL, 1, 4, 'isaaccore@gmail.com', 'isaaccore', 'Isaac', 'Arenas Prado', 'M', 'AV. JUAREZ SUR NO. 304 S/N, TULANCINGO CENTRO, 43600', 'ISSAC5698GHT', '', 0),
 (NULL, 1, 4, 'hector25@gmail.com', 'hector25', 'Héctor ', 'Medel Negrete', 'M', 'AV. GUADALUPE S/N6005 M2', 'HECEJ6797', '', 0),
 (NULL, 3, 3, 'gigi56@gmail.com', 'gigi56', 'Mariana', 'Prado Flores', 'F', 'AV. GUADALUPE S/N68963 M2 Zona 3', 'ASWOCJ6797', 'Administrador auxiliar', 4820);
-
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
