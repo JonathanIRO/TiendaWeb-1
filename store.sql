@@ -208,7 +208,7 @@ CREATE TABLE usuario (
 -- Volcado de datos para la tabla usuario
 --
 
-INSERT INTO usuario ( idTipoUsuario, idDepartamento, email, contrasena, nombre, apellidos, genero, domicilio, rfc, puesto, salario) VALUES
+INSERT INTO usuario VALUES
 (NULL,2, 1, 'isaias@gmail.com', 'isaias', 'Isaias', 'Flores Magaña', 'M', 'Calle 501, Michoacán #12 Fracc. Lomas', 'AFGHTYUFG55J', 'Jefe almacén', 23000),
 (NULL, 2, 1, 'carlos@gmail.com', 'carlos', 'Carlos', 'Torres Romero', 'M', 'Calle 992 Villas de victoria, Av principal #12 Fracc. Lomas verde', 'ADJFHEYCHR66', 'Almacenista', 5600),
 (NULL, 2, 1, 'july56@gmail.com', 'july56', 'Julieta', 'Flores Calva', 'F', 'GUERRERO NO. 1758, LAS REYNAS, 36660', 'JULY5698GHT', 'Almacenista', 6300),
