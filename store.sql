@@ -25,13 +25,13 @@
 
 CREATE TABLE articulo (
   idArticulo int(11) AUTO_INCREMENT PRIMARY KEY,
-  idCategoria int(11) ,
-  Nombre varchar(150) ,
-  Descripcion text ,
-  Marca varchar(100) ,
-  Precio float ,
-  Unidad varchar(100) ,
-  Existencias int(11) ,
+  idCategoria int(11) NOT NULL,
+  Nombre varchar(150) NOT NULL,
+  Descripcion text NOT NULL,
+  Marca varchar(100) NOT NULL,
+  Precio float NOT NULL,
+  Unidad varchar(100) NOT NULL,
+  Existencias int(11) NOT NULL,
   Imagen longblob DEFAULT NULL
 );
 
@@ -68,9 +68,9 @@ INSERT INTO articulo (idArticulo, idCategoria, Nombre, Descripcion, Marca, Preci
 
 CREATE TABLE carritocompras (
   idCarritoCompra int(11) AUTO_INCREMENT PRIMARY KEY,
-  idUsuario int(11) ,
-  idArticulo int(11) ,
-  Cantidad int(11) 
+  idUsuario int(11) NOT NULL,
+  idArticulo int(11) NOT NULL,
+  Cantidad int(11) NOT NULL
 ) ;
 
 -- --------------------------------------------------------
@@ -81,8 +81,8 @@ CREATE TABLE carritocompras (
 
 CREATE TABLE categoria (
   idCategoria int(11) AUTO_INCREMENT PRIMARY KEY,
-  nombre varchar(150),
-  descripcion text 
+  nombre varchar(150) NOT NULL,
+  descripcion text NOT NULL
 ) ;
 
 --
@@ -101,8 +101,8 @@ INSERT INTO categoria (idCategoria, nombre, descripcion) VALUES
 
 CREATE TABLE departamento (
   idDepartamento int(11) AUTO_INCREMENT PRIMARY KEY,
-  nombre varchar(150) ,
-  descripcion text 
+  nombre varchar(150) NOT NULL,
+  descripcion text NOT NULL
 ) ;
 
 --
@@ -123,10 +123,10 @@ INSERT INTO departamento (idDepartamento, nombre, descripcion) VALUES
 
 CREATE TABLE detallepedido (
   idDetallePedido int(11) AUTO_INCREMENT PRIMARY KEY,
-  idPedido int(11) ,
-  idArticulo int(11) ,
-  idFormaPago int(11) ,
-  cantidad int(11) 
+  idPedido int(11) NOT NULL,
+  idArticulo int(11) NOT NULL,
+  idFormaPago int(11) NOT NULL,
+  cantidad int(11) NOT NULL
 ) ;
 
 -- --------------------------------------------------------
@@ -137,12 +137,12 @@ CREATE TABLE detallepedido (
 
 CREATE TABLE formaspago (
   idFormasPago int(11) AUTO_INCREMENT PRIMARY KEY,
-  idUsuario int(11) ,
-  nombre varchar(100) ,
-  nCuenta varchar(255) ,
-  fechaVencimiento datetime ,
-  opcionPago varchar(255)  COMMENT 'Mastecard, Visa o Paypal',
-  CVV int(4) 
+  idUsuario int(11) NOT NULL,
+  nombre varchar(100) NOT NULL,
+  nCuenta varchar(255) NOT NULL,
+  fechaVencimiento datetime NOT NULL,
+  opcionPago varchar(255) NOT NULL COMMENT 'Mastecard, Visa o Paypal',
+  CVV int(4) NOT NULL
 ) ;
 
 -- --------------------------------------------------------
@@ -153,10 +153,10 @@ CREATE TABLE formaspago (
 
 CREATE TABLE pedido (
   idPedido int(11) AUTO_INCREMENT PRIMARY KEY,
-  idUsuario int(11) ,
-  idDetallePedido int(11) ,
-  fechaPedido datetime ,
-  estatus int(11) 
+  idUsuario int(11) NOT NULL,
+  idDetallePedido int(11) NOT NULL,
+  fechaPedido datetime NOT NULL,
+  estatus int(11) NOT NULL
 ) ;
 
 -- --------------------------------------------------------
@@ -167,7 +167,7 @@ CREATE TABLE pedido (
 
 CREATE TABLE tipousuario (
   idTipoUsuario int(11) AUTO_INCREMENT PRIMARY KEY,
-  descripcion varchar(255) 
+  descripcion varchar(255) NOT NULL
 ) ;
 
 --
@@ -187,17 +187,17 @@ INSERT INTO tipousuario (idTipoUsuario, descripcion) VALUES
 
 CREATE TABLE usuario (
   idUsuario int(11) AUTO_INCREMENT PRIMARY KEY,
-  idTipoUsuario int(11) ,
-  idDepartamento int(11) ,
-  email varchar(255) ,
-  contrasena varchar(50) ,
-  nombre varchar(100) ,
-  apellidos varchar(100) ,
-  genero char(1) ,
-  domicilio text  COMMENT 'calle, numero, colonia, ciudad, cp, email y telefono',
-  rfc varchar(100) ,
-  puesto varchar(100) ,
-  salario double 
+  idTipoUsuario int(11) NOT NULL,
+  idDepartamento int(11) NOT NULL,
+  email varchar(255) NOT NULL,
+  contrasena varchar(50) NOT NULL,
+  nombre varchar(100) NOT NULL,
+  apellidos varchar(100) NOT NULL,
+  genero char(1) NOT NULL,
+  domicilio text NOT NULL COMMENT 'calle, numero, colonia, ciudad, cp, email y telefono',
+  rfc varchar(100) NOT NULL,
+  puesto varchar(100) NOT NULL,
+  salario double NOT NULL
 ) ;
 
 --
@@ -289,13 +289,13 @@ ALTER TABLE usuario
 -- AUTO_INCREMENT de la tabla articulo
 --
 ALTER TABLE articulo
-  MODIFY idArticulo int(11)  AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY idArticulo int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla usuario
 --
 ALTER TABLE usuario
-  MODIFY idUsuario int(11)  AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY idUsuario int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
