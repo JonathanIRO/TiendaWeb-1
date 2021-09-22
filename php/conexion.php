@@ -1,6 +1,6 @@
 <?php
     $servidor="localhost";
-    $nombreBD="store";
+    $nombreBD="tienda";
     $usuario="root";
     $pass=" ";
     $conexion = new mysqli($servidor,$usuario,$pass,$nombreBD);
