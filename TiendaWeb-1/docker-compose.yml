@@ -1,0 +1,24 @@
+version: '1.8'
+services:
+    php-apache-environment:
+        container_name: php_apache
+        build:
+            context: ./TiendaWeb-1/TiendaWeb-1
+            dockerfile: Dockerfile
+        depends_on:
+            - db
+        volumes:
+            - ./TiendaWeb-1/TiendaWeb-1:/var/www/html
+        ports:
+            - 8000:80
+    db:
+        restart: always
+        image: mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: localhost
+            MYSQL_DATABASE: store
+            MYSQL_USER: isaac
+            MYSQL_PASSWORD: admin1234
+        volumes:
+            - ./TiendaWeb-1/TiendaWeb-1/store:/var/lib/mysql
+            - ./TiendaWeb-1/TiendaWeb-1/store.sql:/docker-entrypoint-initdb.d/dump.sql
